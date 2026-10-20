@@ -1,0 +1,38 @@
+mongoose is an elegant mongodb object modelling in node.js
+import mongoose from 'mongoose'
+const userSchema = new mongoose.Schema({})
+export const User = mongoose.model("User",userSchema)
+here when data model is send to the js it converts the data model "User" to users...
+//default data modelling syntax through mongoose
+import mongoose from 'mongoose'
+const subtodoScehma = new Mongoose.Schema({},{timestamps:true})
+export const SubTodo = Mongoose.model("SubTodo",subtodoScehma)
+
+//for objects
+
+import mongoose from 'mongoose'
+const userSchema = new mongoose.Schema(
+  {
+    // username :String,
+    // email :String,
+    // isActive:Boolean
+    username:{
+      type:String,
+      required:true,
+      unique: true,
+      lowercase: true
+    },
+    email: {
+      type:String,
+      required: true,
+      unique: true,
+      lowercase: true
+    },
+    password:{
+      type:Number,
+      required: true
+    }
+  },{timestamps:true}
+)
+export const User = mongoose.model("User",userSchema)
+https://stackblitz.com/edit/stackblitz-starters-wggvbys6?description=&file=package.json,models%2Ftodos%2Fsub_todo.model.js,models%2Ftodos%2Ftodo.model.js,models%2Ftodos%2Fuser.model.js&title=Express%20Starter
